@@ -16,7 +16,7 @@ export class UserService {
   }
 
   findOne(id: number) {
-    this.userRepository.findOneBy({
+    return this.userRepository.findOneBy({
       id,
     });
   }
@@ -27,5 +27,9 @@ export class UserService {
 
   remove(id: number) {
     return this.userRepository.delete(id);
+  }
+
+  async findByEmail(email: string): Promise<User | undefined> {
+    return this.userRepository.findOne({ where: { email } });
   }
 }

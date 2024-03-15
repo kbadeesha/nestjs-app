@@ -4,3 +4,7 @@ export interface CreateUserDto {
   email: string;
   password: string;
 }
+export interface ExistingUserDto {
+  email: string;
+  password: string;
+}
